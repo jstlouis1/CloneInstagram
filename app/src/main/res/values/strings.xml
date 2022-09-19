@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">InstagramClone</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <!-- Paste BOTH strings as required -->
+    <string name="back4app_app_id">2O1L5eG41Lziy4jHjMLNI3zk3Hu48dhNn0tG9dRg</string>
+    <string name="back4app_client_key">Jc8nV4N44hbMQFtqGWiOZBXgV4gwHnZQQdMjWW4b</string>
+    <string name="username">Username</string>
+    <string name="log_in">LOG IN</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="password">Password</string>
+    <string name="instagram">Instagram</string>
+    <string name="description">Description</string>
+    <string name="take_picture">TAKE PICTURE</string>
+    <string name="submit">SUBMIT</string>
+    <string name="home">Home</string>
+    <string name="plus">plus</string>
+    <string name="account">Account</string>
+    <string name="logout">LOGOUT</string>
+    <string name="button_to_open_camera">Button to open camera</string>
+    <string name="button_to_share">Button to share</string>
+    <string name="share">Share</string>
+    <string name="camera">Camera</string>
+    <string name="post">Post</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="image_posted">Image posted</string>
+    <string name="settings">Settings</string>
+    <string name="compose">Compose</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="comment">Comment</string>
+    <string name="add_a_comment">Add a comment</string>
+    <string name="image_profile">Image Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+</resources>

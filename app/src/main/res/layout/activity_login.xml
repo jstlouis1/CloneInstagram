@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="32sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:fontFamily="@font/instagram_font"
+        android:text="@string/instagram" />
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_edit_text"
+        android:hint="@string/username"
+        android:autofillHints="Username"
+        android:inputType="text" />
+
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:autofillHints="Password"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_edit_text"
+        android:backgroundTint="@color/red"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:text="@string/log_in"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btnSignUP"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_edit_text"
+        android:backgroundTint="@color/black"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:text="@string/sign_up"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>

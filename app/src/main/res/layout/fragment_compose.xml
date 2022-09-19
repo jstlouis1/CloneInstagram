@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComposeFragment">
+
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ivPicture"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/ivPicture"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_above="@id/etDescription"
+            android:layout_marginBottom="10dp"
+            android:visibility="invisible"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btnSubmit"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:autofillHints="Description"
+            android:ems="10"
+            android:hint="@string/description"
+            android:inputType="text"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/gray"
+            android:layout_alignParentBottom="true"
+            android:visibility="invisible"
+            android:text="@string/post" />
+
+        <Button
+            android:id="@+id/btnTakePicture"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="137dp"
+            android:layout_marginBottom="451dp"
+            android:backgroundTint="@color/red"
+            android:text="Photo" />
+
+
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="30dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/iconCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/camera"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/camera"
+            android:backgroundTint="@color/white"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/instagram_font"
+            android:gravity="center"
+            android:text="@string/instagram"
+            android:textColor="@color/black"
+            android:textSize="26sp" />
+
+        <ImageButton
+            android:id="@+id/iconShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/white"
+            android:contentDescription="@string/share"
+            android:src="@drawable/send1_fill" />
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>
