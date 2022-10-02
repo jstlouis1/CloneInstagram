@@ -25,7 +25,7 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostFragment extends Fragment {
+public class PostFrag extends Fragment {
 
     public static final String TAG = "HomeFragment";
     protected RecyclerView rvPost;

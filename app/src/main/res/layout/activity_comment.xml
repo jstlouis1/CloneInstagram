@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
-    tools:context=".CommentActivity">
+    tools:context=".Commentaries">
 
     <include
-        android:id="@+id/toolbar_detail"
+        android:id="@+id/detail_bar"
         layout="@layout/toolbar_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

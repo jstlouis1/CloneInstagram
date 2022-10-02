@@ -7,7 +7,7 @@
     tools:context=".DetailActivity">
 
     <include
-        android:id="@+id/toolbar_detail"
+        android:id="@+id/detail_bar"
         layout="@layout/toolbar_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -16,7 +16,7 @@
         android:id="@+id/ivProfileImageDetail"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_below="@+id/toolbar_detail"
+        android:layout_below="@+id/detail_bar"
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
@@ -27,7 +27,7 @@
         android:id="@+id/tvUsernameDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar_detail"
+        android:layout_below="@+id/detail_bar"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/ivProfileImageDetail"
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/toolbar_detail"
+        android:layout_below="@+id/detail_bar"
         android:layout_marginTop="-5dp"
         android:backgroundTint="@color/white"
         android:contentDescription="@string/settings"

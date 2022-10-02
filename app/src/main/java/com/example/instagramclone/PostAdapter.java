@@ -110,7 +110,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             Glide.with(context).load(post.getUser().getParseFile(User.KEY_PROFILE_IMAGE).getUrl()).transform(new RoundedCorners(100)).into(ivProfileImage);
             tvUsername.setText(post.getUser().getUsername());
             tvDescription.setText(post.getDescription());
-            tvDate.setText(TimeFormatter.getTimeStamp(post.getCreatedAt().toString()));
+            tvDate.setText(Time.getTimeStamp(post.getCreatedAt().toString()));
             tvLike.setText(String.valueOf(post.getNumberLike()) + " likes");
 
             ParseFile image = post.getImage();
@@ -149,15 +149,15 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
                 @Override
                 public void onClick(View view) {
                     FragmentManager fragmentManager = ((FragmentActivity) context).getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.fragmentPlaceholder, new ProfileFragment()).commit();
-                    MainActivity.bottom_navigation.setSelectedItemId(R.id.action_account);
+                    fragmentManager.beginTransaction().replace(R.id.Placeholder, new ProfileFrag()).commit();
+                    MainActivity.bottom_navigation.setSelectedItemId(R.id.Aprofile);
                 }
             });
 
             imgBtnComment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(context, CommentActivity.class);
+                    Intent i = new Intent(context, Commentaries.class);
                     i.putExtra("post", Parcels.wrap(post));
                     context.startActivity(i);
                 }

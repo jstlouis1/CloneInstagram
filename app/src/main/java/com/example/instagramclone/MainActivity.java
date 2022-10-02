@@ -15,10 +15,10 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
     public static BottomNavigationView bottom_navigation;
-    final FragmentManager fragmentManager = getSupportFragmentManager();
-    final Fragment HomeFragment = new PostFragment();
-    final Fragment PostFragment = new ComposeFragment();
-    final Fragment AccountFragment = new ProfileFragment();
+    final FragmentManager fragmentTransaction = getSupportFragmentManager();
+    final Fragment postFrag = new PostFrag();
+    final Fragment composeFrag = new ComposeFrag();
+    final Fragment profileFrag = new ProfileFrag();
 
 
     @Override
@@ -35,25 +35,16 @@ public class MainActivity extends AppCompatActivity {
         bottom_navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment = new Fragment();
-                switch (item.getItemId()){
-                    case R.id.action_home:
-                        fragment = HomeFragment;
-                        break;
-
-                    case R.id.action_plus:
-                        fragment = PostFragment;
-                        break;
-
-                    case R.id.action_account:
-                    default:
-                        fragment = AccountFragment;
-                        break;
-                }
-                fragmentManager.beginTransaction().replace(R.id.fragmentPlaceholder, fragment).commit();
+                Fragment frag = new Fragment();
+                if (item.getItemId()==R.id.Home){frag = postFrag; }
+                if(item.getItemId()== R.id.Composetouch) {frag = composeFrag;}
+                if(item.getItemId()==R.id.Aprofile){frag = profileFrag;}
+                fragmentTransaction.beginTransaction().replace(R.id.Placeholder, frag).commit();
                 return true;
             }
+
+
         });
-        bottom_navigation.setSelectedItemId(R.id.action_home);
+        bottom_navigation.setSelectedItemId(R.id.Home);
     }
 }

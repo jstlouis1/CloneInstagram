@@ -23,7 +23,7 @@ import com.parse.SaveCallback;
 
 import org.parceler.Parcels;
 
-public class CommentActivity extends AppCompatActivity {
+public class Commentaries extends AppCompatActivity {
 
     public static final String TAG = "CommentActivity";
     private TextView tvUserName;
@@ -38,8 +38,8 @@ public class CommentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_detail);
-        ImageButton btnBack = findViewById(R.id.iconBack);
+        Toolbar toolbar = findViewById(R.id.detail_bar);
+        ImageButton btnBack = findViewById(R.id.BackIcon);
         setSupportActionBar(toolbar);
 
 
@@ -55,7 +55,7 @@ public class CommentActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(CommentActivity.this, MainActivity.class);
+                Intent i = new Intent(Commentaries.this, MainActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivityIfNeeded(i, 0);
             }

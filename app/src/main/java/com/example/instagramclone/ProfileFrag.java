@@ -30,9 +30,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
-import com.example.instagramclone.LoginActivity;
-import com.example.instagramclone.R;
-import com.example.instagramclone.ImageGridAdapter;
 import com.example.instagramclone.models.Post;
 import com.example.instagramclone.models.User;
 import com.parse.FindCallback;
@@ -46,7 +43,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileFragment extends Fragment{
+public class ProfileFrag extends Fragment{
 
     public static final String TAG = "ProfileFragment";
     private Button btnLogout;
@@ -56,7 +53,7 @@ public class ProfileFragment extends Fragment{
     private RecyclerView rvImagePost;
     protected List<ParseFile> postList;
 
-    protected ImageGridAdapter adapter;
+    protected GridAdapter adapter;
     private SwipeRefreshLayout swipeContainer;
     private static ParseUser currentUser;
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
@@ -87,27 +84,17 @@ public class ProfileFragment extends Fragment{
         tvUsername.setText(currentUser.getUsername());
         Glide.with(getContext()).load(currentUser.getParseFile("image_profile").getUrl()).transform(new RoundedCorners(100)).into(ivProfile);
 
-        //Create the adapter
-        adapter = new ImageGridAdapter(getContext(), postList);
-
-        //Set the adapter on the recyclerView
+        adapter = new GridAdapter(getContext(), postList);
         rvImagePost.setAdapter(adapter);
 
-        // First param is number of columns and second param is orientation i.e Vertical or Horizontal
         StaggeredGridLayoutManager gridLayoutManager =
                 new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-
-        // Attach the layout manager to the recycler view
         rvImagePost.setLayoutManager(gridLayoutManager);
         queryPost();
-
-        // Configure the refreshing colors
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
-
-        // Setup refresh listener which triggers new data loading
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -126,8 +113,6 @@ public class ProfileFragment extends Fragment{
             }
         });
 
-
-        // click to add ad photo profile
         btnEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,7 +121,6 @@ public class ProfileFragment extends Fragment{
         });
     }
 
-    // query to get all post of the current user
     protected void queryPost() {
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         query.include(Post.KEY_USER);
@@ -165,7 +149,6 @@ public class ProfileFragment extends Fragment{
     }
 
 
-    // open the dialog (user can take photo or choose one from his gallery)
     public void open(){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
         alertDialogBuilder.setMessage("Edit photo profile");
@@ -190,12 +173,10 @@ public class ProfileFragment extends Fragment{
     private void openGallery() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 
-        // Create a File reference for future access
         photoFile = getPhotoFileUri(photoFileName);
 
-        // wrap File object into a content provider
-        // required for API >= 24
-        // See https://guides.codepath.com/android/Sharing-Content-with-Intents#sharing-files-with-api-24-or-higher
+
+
         Uri fileProvider = FileProvider.getUriForFile(getContext(), "com.codepath.fileprovider", photoFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
 
@@ -207,33 +188,24 @@ public class ProfileFragment extends Fragment{
 
     // method to launch the camera
     private void launchCamera() {
-        // create Intent to take a picture and return control to the calling application
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Create a File reference for future access
         photoFile = getPhotoFileUri(photoFileName);
 
-        // wrap File object into a content provider
-        // required for API >= 24
-        // See https://guides.codepath.com/android/Sharing-Content-with-Intents#sharing-files-with-api-24-or-higher
+
         Uri fileProvider = FileProvider.getUriForFile(getContext(), "com.codepath.fileprovider", photoFile);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider);
 
-        // If you call startActivityForResult() using an intent that no app can handle, your app will crash.
-        // So as long as the result is not null, it's safe to use the intent.
+
         if (intent.resolveActivity(getContext().getPackageManager()) != null) {
-            // Start the image capture intent to take photo
             startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
         }
     }
 
     // Returns the File for a photo stored on disk given the fileName
     public File getPhotoFileUri(String fileName) {
-        // Get safe storage directory for photos
-        // Use `getExternalFilesDir` on Context to access package-specific directories.
-        // This way, we don't need to request external read/write runtime permissions.
+
         File mediaStorageDir = new File(getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), TAG);
 
-        // Create the storage directory if it does not exist
         if (!mediaStorageDir.exists() && !mediaStorageDir.mkdirs()) {
             Log.d(TAG, "failed to create directory");
         }

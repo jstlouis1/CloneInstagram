@@ -3,19 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_home"
+        android:id="@+id/Home"
         android:enabled="true"
         android:icon="@drawable/home_selector"
         app:showAsAction="ifRoom"
         android:title="@string/home"/>
     <item
-        android:id="@+id/action_plus"
+        android:id="@+id/Composetouch"
         android:enabled="true"
         android:icon="@drawable/post_selector"
         app:showAsAction="ifRoom"
         android:title="@string/compose" />
     <item
-        android:id="@+id/action_account"
+        android:id="@+id/Aprofile"
         android:enabled="true"
         android:icon="@drawable/account_selector"
         app:showAsAction="ifRoom"

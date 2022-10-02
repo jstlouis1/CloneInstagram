@@ -27,7 +27,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".CommentActivity"
+            android:name=".Commentaries"
             android:exported="false" />
         <activity
             android:name=".DetailActivity"

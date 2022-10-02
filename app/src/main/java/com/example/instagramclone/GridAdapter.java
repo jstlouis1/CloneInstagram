@@ -12,21 +12,21 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.parse.ParseFile;
 import java.util.List;
 
-public class ImageGridAdapter extends RecyclerView.Adapter<ImageGridAdapter.ViewHolder>{
+public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder>{
     public static final String TAG = "ImageGridAdapter";
     public static Context context;
     List<ParseFile> posts;
 
-    public ImageGridAdapter(Context context1, List<ParseFile> posts) {
+    public GridAdapter(Context context1, List<ParseFile> posts) {
         this.context = context1;
         this.posts = posts;
     }
 
     @NonNull
     @Override
-    public ImageGridAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public GridAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.image_grid, parent, false);
-        return new ImageGridAdapter.ViewHolder(view);
+        return new GridAdapter.ViewHolder(view);
     }
 
     @Override

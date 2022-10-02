@@ -43,15 +43,15 @@ public class DetailActivity extends AppCompatActivity {
     protected List<Comment> comments;
     protected CommentAdapter adapter;
     Context context;
-    Fragment fragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_detail);
-        ImageButton btnBack = findViewById(R.id.iconBack);
+        Toolbar toolbar = findViewById(R.id.detail_bar);
+        ImageButton btnBack = findViewById(R.id.BackIcon);
         setSupportActionBar(toolbar);
 
         ivProfileImage = findViewById(R.id.ivProfileImageDetail);
@@ -87,7 +87,7 @@ public class DetailActivity extends AppCompatActivity {
 
         tvUsername.setText(post.getUser().getUsername());
         tvDescription.setText(post.getDescription());
-        tvDate.setText(TimeFormatter.getTimeStamp(post.getCreatedAt().toString()));
+        tvDate.setText(Time.getTimeStamp(post.getCreatedAt().toString()));
         Glide.with(DetailActivity.this).load(post.getUser().getParseFile(User.KEY_PROFILE_IMAGE).getUrl()).transform(new RoundedCorners(100)).into(ivProfileImage);
 
         ParseFile image = post.getImage();

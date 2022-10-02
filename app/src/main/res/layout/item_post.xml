@@ -32,9 +32,9 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/ivProfileImage"
-            tools:ignore="RelativeOverlap"
             android:textStyle="bold"
-            tools:text="john@2000" />
+            tools:ignore="RelativeOverlap"
+            tools:text="jstlouis1" />
     </RelativeLayout>
 
 

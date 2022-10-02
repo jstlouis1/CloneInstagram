@@ -21,20 +21,17 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import com.example.instagramclone.R;
+
 import com.example.instagramclone.models.Post;
-import com.google.android.material.textfield.TextInputLayout;
-import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import java.io.File;
-import java.util.List;
+
 import com.parse.SaveCallback;
 
 
-public class ComposeFragment extends Fragment {
+public class ComposeFrag extends Fragment {
 
     public static final String TAG = "ComposeFragment";
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
@@ -46,7 +43,7 @@ public class ComposeFragment extends Fragment {
     private ProgressBar progressBar;
 
 
-    public ComposeFragment(){}
+    public ComposeFrag(){}
 
     @Nullable
     @Override
