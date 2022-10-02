@@ -90,7 +90,7 @@
         android:layout_toEndOf="@+id/imgBtnComment"
         android:backgroundTint="@color/white"
         android:contentDescription="@string/settings"
-        android:src="@drawable/send1" />
+        android:src="@drawable/blank" />
 
     <ImageButton
         android:id="@+id/imgBtnSave"

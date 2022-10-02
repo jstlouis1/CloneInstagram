@@ -42,12 +42,12 @@
             android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/gray"
-            android:layout_alignParentBottom="true"
-            android:visibility="invisible"
-            android:text="@string/post" />
+            android:backgroundTint="@color/red"
+            android:text="POST"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/btnTakePicture"

@@ -11,7 +11,7 @@
     <item
         android:id="@+id/Composetouch"
         android:enabled="true"
-        android:icon="@drawable/post_selector"
+        android:icon="@drawable/selector"
         app:showAsAction="ifRoom"
         android:title="@string/compose" />
     <item

@@ -33,7 +33,7 @@
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/gray"
             android:contentDescription="@string/share"
-            android:src="@drawable/send1" />
+            android:src="@drawable/blank" />
     </RelativeLayout>
 
 </androidx.appcompat.widget.Toolbar>
